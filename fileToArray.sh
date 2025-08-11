@@ -23,3 +23,13 @@ echo "${column2[@]}"
 echo "${column3[@]}"
 echo "${column4[@]}"
 
+#Combine column4 with the csv file
+
+# add the header into a new file
+echo "${column_3[0]}" > column_3.txt
+#append each line into the file
+for ((i=1; i<nlines; i++)); do
+  echo "${column_3[$i]}" >> column_3.txt
+done
+#combine with csv
+paste -d "," $csv_file column_3.txt > report.csv
