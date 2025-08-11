@@ -28,7 +28,7 @@ echo "${column4[@]}"
 # add the header into a new file
 echo "${column_3[0]}" > column_3.txt
 #append each line into the file
-for ((i=1; i<nlines; i++)); do
+for ((i=1; i<${#column1[@]}; i++)); do
   echo "${column_3[$i]}" >> column_3.txt
 done
 #combine with csv
